@@ -3,7 +3,7 @@ JCalculus
 
 It is a simple, but powerfull calculator based on Java with JavaFX GUI
 
-![logo](https://github.com/vkolev/jcalculus/images/jcalculus_screen.png)
+![logo](https://github.com/vkolev/jcalculus/blob/master/images/jcalculus_screen.png?raw=true)
 
 
 
