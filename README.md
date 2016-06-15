@@ -24,6 +24,18 @@ What is to be done
 - Buttons for more complicated functions
 - Perhaps design polishing?!
 
+Run the application
+-------------------
+
+To simply test the application from the source files just run the following commands:
+
+```bash
+git clone https://github.com/vkolev/jcalculus
+cd jcalculus
+mvn jfx:run
+```
+
+and you should be good to go :)
 
 How to compile
 --------------
