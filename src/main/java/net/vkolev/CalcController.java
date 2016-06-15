@@ -7,6 +7,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
@@ -202,7 +204,7 @@ public class CalcController {
     }
 
     public void handleKeyReleasedEvent(KeyEvent keyEvent) {
-        System.out.println(keyEvent.getCode());
+        //System.out.println(keyEvent.getCode());
         if(keyEvent.getCode() == KeyCode.ADD) {
             this.insertAdd();
         }
@@ -259,9 +261,18 @@ public class CalcController {
                 KeyCombination.CONTROL_DOWN);
         final KeyCombination keyCombQuitOTHER = new KeyCodeCombination(KeyCode.Q,
                 KeyCombination.ALT_DOWN);
-        if(keyCombQuitGNOME.match(keyEvent)) {
+		final KeyCombination keyCombCopy = new KeyCodeCombination(KeyCode.C,
+				KeyCombination.CONTROL_DOWN);
+        if(keyCombQuitGNOME.match(keyEvent) || keyCombQuitOTHER.match(keyEvent)) {
             Stage stage = (Stage) clrButton.getScene().getWindow();
             stage.close();
         }
+
+		if(keyCombCopy.match(keyEvent)) {
+			final Clipboard clipboard = Clipboard.getSystemClipboard();
+			final ClipboardContent content = new ClipboardContent();
+			content.putString(mainField.getText());
+			clipboard.setContent(content);
+		}
     }
 }
