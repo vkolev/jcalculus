@@ -106,6 +106,22 @@ public class CalcController {
         mainField.insertText(mainField.getLength(), ".");
     }
 
+	public void insertSqrt() {
+		mainField.insertText(mainField.getLength(), "sqrt");
+	}
+
+	public void insertSin() {
+		// TODO
+	}
+
+	public void insertCos() {
+		// TODO
+	}
+
+	public void insertTan() {
+		// TODO
+	}
+
     public void calculateExpr() {
         double result = eval(mainField.getText());
         mainField.setText(fmt(result));
